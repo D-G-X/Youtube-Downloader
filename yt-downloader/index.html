@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube Downloader</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="{%static 'styles/main.css'}"> -->
+</head>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #1b1c20;
+		color: #fff;
+	}
+	.container{
+	margin-top: 200px;
+	width:100%;
+	/*border:solid 1px #000;*/
+	}
+	.input-element{
+	
+	/*border:solid 1px #000;*/
+	}
+	.input-link{
+		font-family: 'Work Sans', sans-serif;
+	/*border:1px solid #66fcf1;*/
+	/*background: #1b1c20;*/
+	/*color:#66fcf1;*/
+	display: inline-block;
+/*	margin-left: 5%;*/
+	/*margin:20px 0% 20px 5%;*/
+	width:80%;
+	/*color:#66fcf1;*/
+	/*padding-left: 20px;*/
+	}
+	#submit-box{
+		/*margin:-20px 0% 10px 0%;*/
+		margin-top: 70px;
+	}
+	
+	#submit-butt:hover{
+	/*border:solid 1px #000;*/
+
+		background-color: #1b1c20;
+		color: #ff0000;
+		border: solid 1px #ff0000;
+
+		/*box-shadow: 0 12px 15px 0 rgba(0,0,0,0.26), 0 17px 20px 0 rgba(0,0,0,0.10);*/
+
+}
+
+label.a{
+	font-family: 'Work Sans', sans-serif;
+}
+
+#title-head{
+	margin:0px 0px 0px 0px;
+	padding: 40px 0px 40px 0px;
+	/*border: solid 2px white;*/
+	text-align: center;
+	font-family: 'Alata', sans-serif;
+	font-weight: bold;
+	font-size: 3.5rem;
+	text-shadow: 2px 2.5px 2.5px #ff0000;
+	color: white;
+	/*background-color:#3D3D3D;*/
+	background-color: rgba(0,0,0,0.6);
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+	/*font-family: 'Work Sans', sans-serif;*/
+}
+
+
+#submit-butt{
+	font-family: 'Work Sans', sans-serif;
+	border:0px solid #000;
+	border-radius:5px;
+	text-align: center;
+	width:24%;
+	padding: 10px 22px;
+	text-decoration: none;
+	height:50px;
+	/*margin: 45px 3%;*/
+	margin-left: 39%;
+	/*margin-bottom: 10px;*/
+	font-weight: bold;
+	background:#ff0000;
+	color:#fff;
+	cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.26), 0 17px 20px 0 rgba(0,0,0,0.10);
+	/*margin-left: 35%*/
+
+}
+.input-link{
+	padding: 10px;
+	display: inline-block;
+	background: #1b1c20;
+	color: #fff;
+	border-radius: 2.5%;
+	border:solid 2px #fff;
+
+}
+.input-link::placeholder{
+	color: white;
+	text-align : center;
+}
+</style>
+
+<body>
+	<h1 id="title-head">Youtube Downloader</h1>
+	<div class="container">
+		<div id="row">
+				<form action='' method="POST">{% csrf_token %}
+				<div class="input-element">
+					<label for="item", class=a>Video URL  &nbsp; : &nbsp;</label>
+					<input class="input-link" type="text" id="item" name="item" placeholder="Enter URL" required="true">
+				</div>
+				<div id="submit-box">
+					<input type="submit" id="submit-butt" name="Download" value="Download">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
